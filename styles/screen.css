@@ -1,0 +1,476 @@
+
+/* police */
+@font-face {
+    font-family:"cyberpunk" ;
+    src: url("polices/cyberpunk-regular.ttf");
+}
+
+/* variables */
+:root{
+    --jaune-Pantone-3945C : #f3e500;
+    --largeur-max-main : 90%;
+    --largeur-min-main : 750px;
+    --taille-coin : 55px;
+    --decalage-coin-gauche : 10px;
+    --decalage-coin-droit : 45px;
+    --taile-image : 450px;
+
+}
+
+
+/* élément général */
+*{
+    color: white;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 102%;
+}
+html{
+    background-image: url("img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+em{
+    font-style: normal;
+    color: var(--jaune-Pantone-3945C);
+    text-shadow: 2px 0px 2px #BD00FF;
+}
+
+
+/*************************
+********* bannière ********
+**************************/
+.banniere h1{
+    color: var(--jaune-Pantone-3945C);
+    text-shadow: 2px 0 #81fffe;
+    text-align: center;
+    font-size: 5em;
+    font-family: 'cyberpunk',Arial;
+}
+
+/************************
+********** menu *********
+*************************/
+.menu{
+    margin: auto;
+    background-color: black;
+    max-width: calc(var(--largeur-max-main) + (2em * 2));
+    min-width: calc(var(--largeur-min-main) + (2em * 2));
+}
+.menu ul{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: var(--jaune-Pantone-3945C);
+    list-style-type: none;
+
+}
+
+.menu li{
+    cursor: pointer;
+    text-align: center;
+    height: 77px;
+}
+.menu a{
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 1.55em 0;
+    text-decoration: none;
+}
+.menu h3{
+    color: black;
+    margin: 0;
+
+}
+
+.menu li:hover{
+    text-shadow: -1px -1px white;
+    background-color: #fd0c2d;
+}
+
+/***************************
+********** accueil *********
+****************************/
+
+main{
+    margin: auto;
+    background-color: black;
+    padding: 1em 2em;
+    max-width: var(--largeur-max-main);
+    min-width: var(--largeur-min-main);
+}
+.accueil{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr ;
+    gap: 20px;
+    /*box-shadow: 0.1px 0.1px 2px white, -0.1px 0px 2px white;*/
+    
+}
+
+.intro{
+    margin: 1em 0;
+}
+.intro p{
+    text-align: center;
+}
+
+.accueil figure{
+    margin: 0;
+    width: 75%;
+    padding: 8% 14%;
+    font-size: larger;
+    border-top: 5px ridge var(--jaune-Pantone-3945C);
+    border-bottom: 5px ridge var(--jaune-Pantone-3945C);
+    border-radius: 300px;
+}
+.accueil figure img{
+    max-width: var(--taile-image);
+    box-sizing: content-box;
+}
+.accueil figcaption{
+    margin-top: 40px;
+}
+
+
+/*  coin jaune */
+
+.accueil figure .block-image{
+    float: left;
+    margin: 2em;
+    height: max-content;
+    width: max-content;
+    position: relative;
+}
+.accueil figure:nth-child(odd) .block-image{
+    float: right;
+}
+
+.coin{
+    position: absolute;
+    z-index: 0;
+    width: var(--taille-coin);
+    height: var(--taille-coin);
+    top: calc(0% - var(--decalage-coin-gauche));
+    left: calc(0% - var(--decalage-coin-gauche));
+    box-shadow: -1em -1em var(--jaune-Pantone-3945C);
+}
+
+.coin_droit{
+    top: calc(100% - var(--decalage-coin-droit));
+    left: calc(100% - var(--decalage-coin-droit));
+    box-shadow: 1em 1em var(--jaune-Pantone-3945C);
+}
+
+
+/************************
+********* source ********
+************************/
+
+.source{
+    position: relative;
+    left: -8px;
+    bottom: -8px;
+    padding: 1em;
+    width: 100%;
+    margin-top: 1em;
+    background-color: #13aac9;
+}
+.source li{
+    list-style: none;
+    display: inline-block;
+    padding: 0 3em;
+
+    /*mémo: code de l'exercice recette (TP10/ex1)*/
+}
+.source h3,.source a{
+    color: black;
+
+}
+
+/**************************
+********* quartier ********
+**************************/
+
+#centre-ville{ background-image: url("img/centre-ville.jpg"); }
+#watson{ background-image: url("img/watson.jpg"); }
+#heywood{ background-image: url("img/heywood.png"); }
+#westbrook{ background-image: url("img/westbrook.jpg"); }
+#santo_domingo{ background-image: url("img/santo_domingo.webp"); }
+#pacifica{ background-image: url("img/pacifica.webp"); }
+#badlands{ background-image: url("img/badlands.webp"); }
+
+.quartier .contenu{
+    display: none;
+    width: 70%;
+    margin: 2em auto;
+}
+.quartier a{
+    text-decoration: none;
+    width: 100%;
+    padding: 4em 0;
+    text-align: center;
+}
+.quartier h1{
+    margin: 0;
+    height: 170px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(90%);
+    border: 3px solid transparent;
+
+    cursor: pointer;
+    text-transform: capitalize;
+    text-transform: uppercase;
+}
+
+.quartier h1:hover{
+    border: 3px solid var(--jaune-Pantone-3945C);
+}
+:target~.contenu{
+    display: block;
+}
+.menace-ncpd{
+    box-sizing: border-box;
+    border: 1px solid var(--jaune-Pantone-3945C);
+    padding: 1em;
+}
+.menace-ncpd h3{
+    font-weight: normal;
+    color: var(--jaune-Pantone-3945C);
+}
+
+
+
+/*#### idée "bonus" pour avoir des citations sur les quartiers qui apparaisse au survole ou clic
+/*
+.citations{
+    
+    position: absolute;
+    top: 500px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    width: 450px;
+    text-align: center;
+    padding: 1em;
+    border-radius: 20px;
+}
+
+.citations::before{
+    content: '“';
+    font-size: 5em;
+    height: 50px;
+    position: absolute;
+    margin-right: 50px;
+}
+.citations::after{
+    content: '”';
+    font-size: 5em;
+    height: 50px;
+    position: absolute;
+    margin-left: 20px;
+
+}*/
+
+
+
+/**************************
+********* histoire ********
+**************************/
+@media (max-width: 1100px){
+
+    .portrait{
+        border: ridge 20px #BD00FF;
+    }
+    .portrait img{
+        float: right;
+        margin-top: 50px;
+        margin-right: 40px;
+    }
+    .portrait figcaption{
+        margin: 10px;
+    }
+    .bio{
+        border: solid 5px var(--jaune-Pantone-3945C);
+        padding: 0.5em;
+    }
+    .nom{
+        width: fit-content;
+        position: absolute;
+        left: 70%;
+    }
+}
+
+@media (min-width: 1100px){
+    #box_shadow{
+        box-shadow: -50px -10px 60px #BD00FF inset,
+                    50px 10px 60px var(--jaune-Pantone-3945C) inset;
+    }
+    .etape{
+        max-width: calc(var(--largeur-max-main) - 2%);
+    }
+    .portrait{
+        border: solid 5px #BD00FF;
+        float: right;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .portrait img{
+        order: 1;
+    }
+    
+    .portrait p {
+      order: 2; 
+    }
+    .portrait .bio {
+        order: 3; 
+      }
+
+    h3{
+        text-align: center;
+    }
+    
+}
+
+
+.etape{
+    margin: 80px auto;
+}
+.portrait{
+    padding: 1em;
+    margin: 1em;
+}
+.portrait img{
+    max-width: 210px;
+    box-shadow: 3px 3px 5px #fd0c2d,
+    -3px -3px 5px #fd0c2d;
+}
+
+.bio{
+    width: fit-content;
+}
+.bio p{
+    text-align: center;
+    color: #fd0c2d;
+}
+.bio dt{
+    display: inline;
+    padding-right: 0.5em;
+    border-right: solid 2px #fd0c2d;
+    color: var(--jaune-Pantone-3945C);
+}
+.bio dd{
+    display: inline;
+    margin: 0;
+    padding-left: 0.5em;
+    border-left: solid 2px #fd0c2d;
+    color: #BD00FF;
+}
+
+
+
+
+/**************************
+******* locaisation *******
+**************************/
+
+#cote_ouest{
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: auto auto;
+    gap: 1em;
+    margin-top: 2em;
+}
+#cote_ouest h2{
+    grid-column: span 3;
+    text-align: center;
+}
+#cote_ouest img{
+    margin-top: 25px;
+    transform: scale(1);
+    transition: transform linear 0.5s;
+}
+
+#cote_ouest img:hover{
+    transform: scale(2);
+    transition: transform linear 1s;
+}
+
+#image_satellite img{
+    max-width: 100%;
+    margin: 2em 0;
+}
+
+#image_satellite fieldset{
+    border-color: #BD00FF;
+}
+
+
+
+/**************************
+***** point d'intérêt *****
+**************************/
+
+.intro img{
+    max-width: 100%;
+}
+
+.poi{
+    border: dashed 10px #81fffe;
+    padding: 2em;
+    margin: 2em 0;
+}
+.poi img{
+    display: block;
+    margin: auto;
+    margin-bottom: 2em;
+    max-width: 100%;
+}
+.poi strong{
+    color: #BD00FF;
+    font-size: 110%;
+}
+.poi h3{
+    text-decoration: underline;
+}
+
+.poi fieldset{
+    border-color: #fd0c2d;
+    margin: 1em;
+}
+.poi legend{
+    margin: auto;
+	display: block;
+}
+
+.titre-poi{
+    margin-bottom: 2em;
+    text-align: center;
+    font-size: 150%;
+    color: var(--jaune-Pantone-3945C);
+    text-decoration: underline #BD00FF;
+}
+
+.intro-poi{
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    text-shadow: -3px -3px rgba(14, 117, 138,0.8);
+}
+
+.fin-poi{
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    text-shadow: 3px 3px rgba(117, 14, 138, 0.8);
+}
